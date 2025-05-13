@@ -1,2 +1,8 @@
 Krzysztof 20
 Janusz 40
+Krzysztof 20
+Janusz 40
+Krzysztof 20
+Janusz 40
+Mariusz 19
+Michal 22
