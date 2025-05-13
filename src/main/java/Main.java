@@ -20,7 +20,8 @@ while(true) {
   System.out.println("\n1. Dodaj studenta");
   System.out.println("2. Wyświetl wszystkich studentów");
   System.out.println("3. Usuń studenta");
-  System.out.println("4. Wyjście");
+  System.out.println("4. Zaktualizuj dane studenta");
+  System.out.println("5. Wyjście");
   System.out.print("Wybierz opcję: ");
 
   int choice = scanner.nextInt();
@@ -61,6 +62,19 @@ while(true) {
     System.out.println("Student został usunięty.");
   }
   else if(choice == 4) {
+    System.out.println("Podaj imię studenta:");
+    String firstName = scanner.nextLine();
+
+    System.out.println("Podaj nazwisko studenta:");
+    String lastName = scanner.nextLine();
+
+    System.out.println("Podaj nowy wiek studenta:");
+    int newAge = scanner.nextInt();
+
+    s.updateStudentAge(firstName, lastName, newAge);
+    System.out.println("Dane studenta zostały zaktualizowane.");
+  }
+  else if(choice == 5) {
     break;
   }
 }

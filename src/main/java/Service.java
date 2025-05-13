@@ -46,4 +46,20 @@ public class Service {
     }
     b.close();
   }
+
+  public void updateStudentAge(String firstName, String lastName, int newAge) throws IOException {
+    var students = getStudents();
+    var f = new FileWriter("db.txt");
+    var b = new BufferedWriter(f);
+
+    for(Student student : students) {
+      if(student.GetFirstName().equals(firstName) && student.GetLastName().equals(lastName)) {
+        b.write(firstName + " " + lastName + " " + newAge + " " + student.GetBirthDate());
+      } else {
+        b.write(student.ToString());
+      }
+      b.newLine();
+    }
+    b.close();
+  }
 }
