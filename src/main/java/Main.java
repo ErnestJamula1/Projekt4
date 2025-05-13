@@ -18,8 +18,8 @@ class Main {
 
 while(true) {
   System.out.println("\n1. Dodaj studenta");
-  System.out.println("2. Lista studentów");
-  System.out.println("3. Koniec");
+  System.out.println("2. Wyświetl wszystkich studentów");
+  System.out.println("3. Wyjście");
   System.out.print("Wybierz opcję: ");
 
   int choice = scanner.nextInt();
@@ -27,12 +27,15 @@ while(true) {
 
   if(choice == 1) {
     System.out.println("Podaj imię studenta:");
-    String name = scanner.nextLine();
+    String firstName = scanner.nextLine();
+
+    System.out.println("Podaj nazwisko studenta:");
+    String lastName = scanner.nextLine();
 
     System.out.println("Podaj wiek studenta:");
     int age = scanner.nextInt();
 
-    s.addStudent(new Student(name, age));
+    s.addStudent(new Student(firstName, lastName, age));
     System.out.println("Student został dodany.");
   }
   else if(choice == 2) {
