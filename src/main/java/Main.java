@@ -34,8 +34,12 @@ while(true) {
 
     System.out.println("Podaj wiek studenta:");
     int age = scanner.nextInt();
+    scanner.nextLine();
 
-    s.addStudent(new Student(firstName, lastName, age));
+    System.out.println("Podaj datę urodzenia (DD.MM.RRRR):");
+    String birthDate = scanner.nextLine();
+
+    s.addStudent(new Student(firstName, lastName, age, birthDate));
     System.out.println("Student został dodany.");
   }
   else if(choice == 2) {
