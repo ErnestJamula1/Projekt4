@@ -33,7 +33,17 @@ public class Service {
     return ret;
   }
 
-  public Student findStudentByName(String name) {
-    return null;
+  public void deleteStudent(String firstName, String lastName) throws IOException {
+    var students = getStudents();
+    var f = new FileWriter("db.txt");
+    var b = new BufferedWriter(f);
+
+    for(Student student : students) {
+      if(!student.GetFirstName().equals(firstName) || !student.GetLastName().equals(lastName)) {
+        b.write(student.ToString());
+        b.newLine();
+      }
+    }
+    b.close();
   }
 }

@@ -19,7 +19,8 @@ class Main {
 while(true) {
   System.out.println("\n1. Dodaj studenta");
   System.out.println("2. Wyświetl wszystkich studentów");
-  System.out.println("3. Wyjście");
+  System.out.println("3. Usuń studenta");
+  System.out.println("4. Wyjście");
   System.out.print("Wybierz opcję: ");
 
   int choice = scanner.nextInt();
@@ -50,6 +51,16 @@ while(true) {
     }
   }
   else if(choice == 3) {
+    System.out.println("Podaj imię studenta do usunięcia:");
+    String firstName = scanner.nextLine();
+
+    System.out.println("Podaj nazwisko studenta do usunięcia:");
+    String lastName = scanner.nextLine();
+
+    s.deleteStudent(firstName, lastName);
+    System.out.println("Student został usunięty.");
+  }
+  else if(choice == 4) {
     break;
   }
 }
